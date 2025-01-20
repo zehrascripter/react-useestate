@@ -13,6 +13,7 @@ import RandomNumberGenerator from './components/RandomNumberGenerator/RandomNumb
 const App = () => {
   return (
 <>
+<div className='w-full md:max-w-2xl mx-auto'>
 <Counter/>
 <ToggleVisibility/>
 <InputMirror/>
@@ -23,6 +24,7 @@ const App = () => {
 <Stopwatch/>
 <CharacterCounter/>
 <RandomNumberGenerator/>
+</div>
 </>
   )
 }

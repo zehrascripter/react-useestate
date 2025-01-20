@@ -17,10 +17,10 @@ function TodoList() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-400 via-pink-300 to-blue-200 text-white">
-      <div className="bg-white p-8 rounded-lg shadow-2xl text-center w-96 transform transition duration-500 hover:scale-105">
-        <h2 className="text-4xl font-extrabold mb-8 text-purple-600">Todo List</h2>
-        <div className="flex items-center space-x-3 mb-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-400 via-pink-300 to-blue-200 text-white px-4">
+      <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-2xl text-center transform transition duration-500 hover:scale-105">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-purple-600">Todo List</h2>
+        <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 mb-6">
           <input
             type="text"
             value={inputValue}
@@ -30,7 +30,7 @@ function TodoList() {
           />
           <button
             onClick={addTodo}
-            className="px-5 py-2 text-lg bg-purple-500 text-white font-semibold rounded-lg shadow hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-300 transition"
+            className="w-full sm:w-auto px-5 py-2 text-lg bg-purple-500 text-white font-semibold rounded-lg shadow hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-300 transition"
           >
             Add
           </button>
@@ -38,7 +38,7 @@ function TodoList() {
         {todos.length === 0 ? (
           <p className="text-gray-600 mt-6">No tasks added yet. Start now!</p>
         ) : (
-          <ul className="text-left space-y-3">
+          <ul className="text-left space-y-3 max-h-64 overflow-y-auto">
             {todos.map((todo, index) => (
               <li
                 key={index}
@@ -47,7 +47,7 @@ function TodoList() {
                 <span className="text-lg text-gray-800">{todo}</span>
                 <button
                   onClick={() => removeTodo(index)}
-                  className="px-4 py-2 bg-red-500 text-white font-medium rounded-lg shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 transition"
+                  className="px-3 py-1 bg-red-500 text-white font-medium rounded-lg shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 transition"
                 >
                   Remove
                 </button>

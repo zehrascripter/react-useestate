@@ -33,30 +33,36 @@ function Stopwatch() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
-      <div className="bg-white p-8 rounded-xl shadow-2xl text-center w-96 transform transition duration-500 hover:scale-105">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800">Stopwatch</h2>
-        <p className="text-5xl font-mono mb-8 text-gray-700">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white px-4">
+      <div className="w-full max-w-md bg-white p-6 sm:p-8 rounded-xl shadow-2xl text-center transform transition duration-500 hover:scale-105">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-800">
+          Stopwatch
+        </h2>
+        <p className="text-4xl sm:text-5xl font-mono mb-6 text-gray-700">
           {formatTime(time)}
         </p>
-        <div className="flex space-x-4">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <button
             onClick={start}
-            className="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 transition"
+            className={`w-full sm:w-auto px-4 py-3 bg-green-500 text-white font-semibold rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 transition ${
+              isRunning ? "opacity-50 cursor-not-allowed" : ""
+            }`}
             disabled={isRunning}
           >
             Start
           </button>
           <button
             onClick={stop}
-            className="px-6 py-3 bg-red-500 text-white font-semibold rounded-lg shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 transition"
+            className={`w-full sm:w-auto px-4 py-3 bg-red-500 text-white font-semibold rounded-lg shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 transition ${
+              !isRunning ? "opacity-50 cursor-not-allowed" : ""
+            }`}
             disabled={!isRunning}
           >
             Stop
           </button>
           <button
             onClick={reset}
-            className="px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 transition"
+            className="w-full sm:w-auto px-4 py-3 bg-gray-500 text-white font-semibold rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 transition"
           >
             Reset
           </button>
