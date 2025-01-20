@@ -26,7 +26,7 @@ function TodoList() {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Add a new task"
-            className="flex-1 px-4 py-2 text-lg border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+            className="text-black flex-1 px-4 py-2 text-lg border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           />
           <button
             onClick={addTodo}
